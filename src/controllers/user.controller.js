@@ -70,6 +70,7 @@ const registerUser = async (req, res, next) => {
         username: username.toLowerCase()
     })
     
+    //checking if a user is created  
     const createdUser = await User.findById(user._id).select("-password -refreshToken");
 
     if(!createdUser){
